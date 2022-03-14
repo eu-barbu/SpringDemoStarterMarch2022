@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practica 2022</title>
+</head>
+<body>
+<h2>Index page</h2>
+
+<span th:text="${greetings}"></span>
+<span th:text="${someText}"></span>
+
+<br/>
+
+<div th:each="employee : ${employeeList}">
+    <span th:text="${employee.lastName}"></span>
+    <span th:text="${employee.firstName}"></span>
+    <span th:text="${employee.getSalary()}"></span>
+</div>
+
+</body>
+</html>

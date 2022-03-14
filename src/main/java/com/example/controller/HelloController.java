@@ -33,10 +33,10 @@ public class HelloController {
     @GetMapping(value="/createEmployee")
     @ResponseBody
     public List<Employee> createEmployee(@RequestParam String firstName, @RequestParam String lastName){
-        return List.of(new Employee(firstName, lastName),
-                new Employee("aa", "bb"),
-                new Employee("aa", "ss"),
-                new Employee("jj", "kk")
+        return List.of(new Employee(firstName, lastName, 300),
+                new Employee("aa", "bb", 500),
+                new Employee("aa", "ss", 600),
+                new Employee("jj", "kk", 650)
                 );
     }
 
