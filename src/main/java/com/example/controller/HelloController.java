@@ -30,7 +30,7 @@ public class HelloController {
         return "Showing productis for region: " + location + " " + name;
     }
 
-    @GetMapping(value="/createEmployee")
+    @GetMapping(value="/createEmployees")
     @ResponseBody
     public List<Employee> createEmployee(@RequestParam String firstName, @RequestParam String lastName){
         return List.of(new Employee(firstName, lastName, 300),

@@ -1,10 +1,26 @@
 package com.example.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "t_employee")
 public class Employee {
 
+
+    @Id
+    @GeneratedValue
+    private int id;
+
+    @Column(name = "firstname")
     private String firstName;
+    @Column(name = "lastname")
     private String lastName;
+    @Column(name = "monthly_salary")
     private int salary;
+
+    public Employee() {
+
+    }
 
     public Employee(String firstName, String lastName, int salary) {
         this.firstName = firstName;
@@ -12,16 +28,24 @@ public class Employee {
         this.salary = salary;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getFirstName() {
         return firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public void setLastName(String lastName) {
