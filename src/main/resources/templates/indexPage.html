@@ -59,6 +59,7 @@
 
 
 <div th:each="employee : ${employeeList}">
+    <span th:text="${employee.id}"></span>
     <span th:text="${employee.lastName}"></span>
     <span th:text="${employee.firstName}"></span>
     <span th:text="${employee.getSalary()}"></span>
@@ -67,19 +68,34 @@
 <br/>
 
 <div>
-    <table>
+    <table class="table table-striped table-bordered">
         <thead>
         <tr>
+            <td>Id</td>
             <td>Lastname</td>
             <td>Firstname</td>
             <td>Salary</td>
+            <td>Action</td>
         </tr>
         </thead>
         <tbody>
         <tr th:each="employee : ${employeeList}">
+            <td th:text="${employee.id}"></td>
             <td th:text="${employee.lastName}"></td>
             <td th:text="${employee.firstName}"></td>
             <td th:text="${employee.salary}"></td>
+            <td>
+                <form th:action="@{/editEmployee}" th:object="${employee}" method="post">
+                    <input class="d-none" name="employeeId" th:value="${employee.id}">
+                    <button class="btn btn-primary">Edit</button>
+                </form>
+
+                <form th:action="@{/deleteEmployee}" th:object="${employee}" method="post">
+                    <input class="d-none" name="employeeId" th:value="${employee.id}">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+
+            </td>
         </tr>
         </tbody>
     </table>

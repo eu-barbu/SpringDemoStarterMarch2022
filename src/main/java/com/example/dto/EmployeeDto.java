@@ -1,31 +1,15 @@
-package com.example.model;
+package com.example.dto;
 
-import javax.persistence.*;
+import javax.persistence.Column;
 
-@Entity
-@Table(name = "t_employee")
-public class Employee {
+public class EmployeeDto {
 
-
-    @Id
-    @GeneratedValue
     private int id;
-
-    @Column(name = "firstname")
     private String firstName;
-    @Column(name = "lastname")
     private String lastName;
-    @Column(name = "monthly_salary")
     private int salary;
 
-    public Employee() {
-
-    }
-
-    public Employee(String firstName, String lastName, int salary) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.salary = salary;
+    public EmployeeDto() {
     }
 
     public int getId() {
