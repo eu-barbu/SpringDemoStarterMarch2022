@@ -74,6 +74,7 @@
             <td>Id</td>
             <td>Lastname</td>
             <td>Firstname</td>
+            <td>Department</td>
             <td>Salary</td>
             <td>Action</td>
         </tr>
@@ -83,6 +84,7 @@
             <td th:text="${employee.id}"></td>
             <td th:text="${employee.lastName}"></td>
             <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.department.code} + ' - ' + ${employee.department.description}"></td>
             <td th:text="${employee.salary}"></td>
             <td>
                 <form th:action="@{/editEmployee}" th:object="${employee}" method="post">

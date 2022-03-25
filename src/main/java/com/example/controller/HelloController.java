@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -33,11 +34,7 @@ public class HelloController {
     @GetMapping(value="/createEmployees")
     @ResponseBody
     public List<Employee> createEmployee(@RequestParam String firstName, @RequestParam String lastName){
-        return List.of(new Employee(firstName, lastName, 300),
-                new Employee("aa", "bb", 500),
-                new Employee("aa", "ss", 600),
-                new Employee("jj", "kk", 650)
-                );
+        return Collections.emptyList();
     }
 
 }
